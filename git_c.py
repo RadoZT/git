@@ -14,10 +14,6 @@ import git
 import sys
 
 
-repo = 1
-path = 1
-
-
 # datetime object containing current date and time
 now = datetime.now()
 # dd/mm/YY H:M:S
@@ -27,14 +23,11 @@ commitT = dt_string
 commitTs = str(dt_string)
 
 
-def path_folder():
-    global repo, path
-    path = 'Absolute Path' # here you have to add the path of your folder
-    if not os.path.exists(path):   # Check if it exists
-        os.makedirs(path)          # If not make it
-    os.chdir(path)
-    repo = Repo(path)
-    return repo, path
+path = 'Absolute Path' # here you have to add the path of your folder
+if not os.path.exists(path):   # Check if it exists
+    os.makedirs(path)          # If not make it
+os.chdir(path)
+repo = Repo(path)
 
 
 def man_commit():
